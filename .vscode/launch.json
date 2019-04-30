@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MBARIBackendApplication",
+            "request": "launch",
+            "mainClass": "edu.csumb.sp19.cst438.mbari.MBARIBackendApplication",
+            "projectName": "mbari"
+        }
+    ]
+}
