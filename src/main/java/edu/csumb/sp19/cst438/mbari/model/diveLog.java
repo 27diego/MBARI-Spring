@@ -116,7 +116,7 @@ public class diveLog
     {
         for(int x=0;x<sites.size();x++)
         {
-            if(name == sites.get(x).getName())
+            if(name.equals(sites.get(x).getName()))
             {
                 site = sites.get(x);
                 break;
@@ -149,7 +149,7 @@ public class diveLog
     {
         for(String s : purpose)
         {
-            if(purp == s)
+            if(purp.equals(s))
             {
                 final_purpose = s;
                 break;
@@ -197,7 +197,7 @@ public class diveLog
     {
         for(String str : mode)
         {
-            if(mod == str)
+            if(mod.equals(str))
             {
                 final_mode = mod;
                 break;
@@ -212,7 +212,7 @@ public class diveLog
     {
         for(String s : decompression)
         {
-            if(s==comp)
+            if(s.equals(comp))
             {
                 final_decompression = s;
                 break;
@@ -227,7 +227,7 @@ public class diveLog
     {
         for(String str : breathing)
         {
-            if(breath == str)
+            if(breath.equals(str))
             {
                 final_breathing = str;
                 break;
@@ -242,7 +242,7 @@ public class diveLog
     {
         for(String str : spec_enviroment)
         {
-            if(env == str)
+            if(env.equals(str))
             {
                 enviroment = env;
                 break;
@@ -257,7 +257,7 @@ public class diveLog
     {
         for(String str : surface_condition)
         {
-            if(str == condition)
+            if(str.equals(condition))
             {
                 up_condition = condition;
                 break;
@@ -272,7 +272,7 @@ public class diveLog
     {
         for(String str : under_condition)
         {
-            if(condition == str)
+            if(condition.equals(str))
             {
                 down_condition = condition;
                 break;

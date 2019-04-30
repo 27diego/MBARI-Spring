@@ -69,7 +69,7 @@ public class equiptment
     {
         for(String str : categories)
         {
-            if(cat == str)
+            if(cat.equals(str))
             {
                 this.category = str;
                 break;
