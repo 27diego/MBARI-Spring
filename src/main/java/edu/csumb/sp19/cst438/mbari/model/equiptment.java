@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Id;
+
 public class equiptment
 {
     List <String> categories = new ArrayList<String>();
     //List<Users> users = new ArrayList<Users>();//users list
+
+    @Id
+    private String Id;
 
     String label;
     String notes;
@@ -16,6 +21,25 @@ public class equiptment
     String category;
     Date nextService;
     boolean recurring;
+
+    public equiptment(String label, String notes, Date serviceDate, String description, String category, Date nextService, boolean recurring)
+    {
+        this.label = label;
+        this.notes = notes;
+        this.serviceDate = serviceDate;
+        this.description = description;
+        this.category = category;
+        this.nextService = nextService;
+        this.recurring = recurring;
+
+        categories.add("Air Filtration Systems");
+        categories.add("Analytical Instruments");
+        categories.add("Buoyancy Control Devices");
+        categories.add("Compressors");
+        categories.add("Cylinder Values");
+        categories.add("Cylinders");
+        categories.add("Depth Gauges");
+    }
 
     public equiptment()
     {
@@ -28,6 +52,16 @@ public class equiptment
         categories.add("Depth Gauges");
     }
 
+
+    public String getId()
+    {
+        return Id;
+    }
+    public void setId(String id)
+    {
+        this.Id = id;
+    }
+    
     public List<String> getALlCategories()
     {
         return categories;
