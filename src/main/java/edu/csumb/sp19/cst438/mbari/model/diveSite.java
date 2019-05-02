@@ -24,7 +24,7 @@ public class diveSite
 
     public String getId()
     {
-        return Id;
+        return this.Id;
     }
     public void setId(String id)
     {

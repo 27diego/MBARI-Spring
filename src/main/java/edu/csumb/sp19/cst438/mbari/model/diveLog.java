@@ -252,20 +252,20 @@ public class diveLog
     
     public void setSurvaceInterval(SimpleDateFormat interval)
     {
-
+        this.surface_interval = interval;
     }
     public SimpleDateFormat getSurfaceInterval()
     {
-        return surface_interval;
+        return this.surface_interval;
     }
 
     public void setMaxDepth()
     {
-        max_depth = site.getDepth();
+        this.max_depth = site.getDepth();
     }
     public int getMaxDepth()
     {
-        return max_depth;
+        return this.max_depth;
     }
     public void setFinalMode(String mod)
     {
@@ -273,14 +273,14 @@ public class diveLog
         {
             if(mod.equals(str))
             {
-                final_mode = mod;
+                this.final_mode = mod;
                 break;
             }
         }
     }
     public String getFinalMode()
     {
-        return final_mode;
+        return this.final_mode;
     }
     public void setFinalCompression(String comp)
     {
@@ -288,14 +288,14 @@ public class diveLog
         {
             if(s.equals(comp))
             {
-                final_decompression = s;
+                this.final_decompression = s;
                 break;
             }
         }
     }
     public String getFinalDecomp()
     {
-        return final_decompression;
+        return this.final_decompression;
     }
     public void setFinalBreathing(String breath)
     {
@@ -303,14 +303,14 @@ public class diveLog
         {
             if(breath.equals(str))
             {
-                final_breathing = str;
+                this.final_breathing = str;
                 break;
             }
         }
     }
     public String getFinalBreathing()
     {
-        return final_breathing;
+        return this.final_breathing;
     }
     public void setFinalEnviroment(String env)
     {
@@ -318,14 +318,14 @@ public class diveLog
         {
             if(env.equals(str))
             {
-                enviroment = env;
+                this.enviroment = env;
                 break;
             }
         }
     }
     public String getEnviroment()
     {
-        return enviroment;
+        return this.enviroment;
     }
     public void setSurfaceCondition(String condition)
     {
@@ -333,14 +333,14 @@ public class diveLog
         {
             if(str.equals(condition))
             {
-                up_condition = condition;
+                this.up_condition = condition;
                 break;
             }
         }
     }
     public String getSurfaceCond()
     {
-        return up_condition;
+        return this.up_condition;
     }
     public void setUnderCondition(String condition)
     {
@@ -348,14 +348,14 @@ public class diveLog
         {
             if(condition.equals(str))
             {
-                down_condition = condition;
+                this.down_condition = condition;
                 break;
             }
         }
     }
     public String getUnderCondt()
     {
-        return down_condition;
+        return this.down_condition;
     }
     public void setComments(String comments)
     {
@@ -371,7 +371,7 @@ public class diveLog
     }
     public String getObservations()
     {
-        return observations;
+        return this.observations;
     }
 
 

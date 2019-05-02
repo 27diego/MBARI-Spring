@@ -61,10 +61,10 @@ public class equiptment
     {
         this.Id = id;
     }
-    
+
     public List<String> getALlCategories()
     {
-        return categories;
+        return this.categories;
     }
 
     public void setLabel(String text)
