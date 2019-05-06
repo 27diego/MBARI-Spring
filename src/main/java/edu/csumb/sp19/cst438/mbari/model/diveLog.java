@@ -11,9 +11,11 @@ import java.util.List;
 
 public class diveLog
 {
-
+    @Id
     private String id;
-    
+
+    String userId;
+
     List<diveSite> sites = new ArrayList<diveSite>();//sites
     List<String> purpose = new ArrayList<String>();
     List<String> mode = new ArrayList<String>();
@@ -23,7 +25,6 @@ public class diveLog
     List<String> surface_condition = new ArrayList<String>();
     List<String> under_condition = new ArrayList<String>();
 
-    User user; // how to set the user
     diveSite site;
     String site_name;
     Date dive_date;
@@ -41,9 +42,6 @@ public class diveLog
     String down_condition;
     String comments;
     String observations;
-
-    public diveLog()
-    {}
 
     public diveLog(diveSite site, String site_name, Date dive_date, SimpleDateFormat start_time, SimpleDateFormat end_time, String final_purpose, String training, SimpleDateFormat surface_interval, int max_depth, String final_mode,String final_decompression, String final_breathing, String enviroment, String up_condition, String down_condition, String comments, String observations)
     {
@@ -104,46 +102,56 @@ public class diveLog
        
     }
 
-    // public diveLog()//populate lists
-    // {
-    //     purpose.add("Commercial Task");
-    //     purpose.add("Commercial, Scientific Taks");
-    //     purpose.add("Other Task");
-    //     purpose.add("Public Safety Task");
-    //     purpose.add("Recreational Task");
+    public diveLog()//populate lists
+    {
+        purpose.add("Commercial Task");
+        purpose.add("Commercial, Scientific Taks");
+        purpose.add("Other Task");
+        purpose.add("Public Safety Task");
+        purpose.add("Recreational Task");
         
-    //     mode.add("Scuba with FFM");
-    //     mode.add("Hookah");
-    //     mode.add("Snorkling");
+        mode.add("Scuba with FFM");
+        mode.add("Hookah");
+        mode.add("Snorkling");
         
-    //     decompression.add("Dive Computer");
-    //     decompression.add("Dive Tables");
-    //     decompression.add("Software");
+        decompression.add("Dive Computer");
+        decompression.add("Dive Tables");
+        decompression.add("Software");
 
-    //     breathing.add("Air");
-    //     breathing.add("Nitrox 28");
-    //     breathing.add("Trimix 30/30");
-    //     breathing.add("tes");
+        breathing.add("Air");
+        breathing.add("Nitrox 28");
+        breathing.add("Trimix 30/30");
+        breathing.add("tes");
 
-    //     spec_enviroment.add("Overhead Enviroment");
-    //     spec_enviroment.add("Blue Water");
-    //     spec_enviroment.add("Required Decompression");
-    //     spec_enviroment.add("Aquarium Diving");
-    //     spec_enviroment.add("asd");
+        spec_enviroment.add("Overhead Enviroment");
+        spec_enviroment.add("Blue Water");
+        spec_enviroment.add("Required Decompression");
+        spec_enviroment.add("Aquarium Diving");
+        spec_enviroment.add("asd");
 
-    //     surface_condition.add("Calm");
-    //     surface_condition.add("Moderate");
-    //     surface_condition.add("Rough");
+        surface_condition.add("Calm");
+        surface_condition.add("Moderate");
+        surface_condition.add("Rough");
 
-    //     under_condition.add("Good");
-    //     under_condition.add("Moderate");
-    //     under_condition.add("Poor");
+        under_condition.add("Good");
+        under_condition.add("Moderate");
+        under_condition.add("Poor");
 
 
-    //     sites.add(new diveSite("Field 1",50));
-    //     sites.add(new diveSite("Field 2",35));
-    // }
+        sites.add(new diveSite("Field 1",50));
+        sites.add(new diveSite("Field 2",35));
+    }
 
+
+
+    public String getUserId()
+    {
+        return this.userId;
+    }
+    public void setUserId(String userId)
+    {
+        this.userId = userId;
+    }
     public String getId()
     {
         return this.id;
