@@ -14,6 +14,7 @@ public class equiptment
     @Id
     private String Id;
 
+    String name;
     String label;
     String notes;
     Date serviceDate;
@@ -22,8 +23,9 @@ public class equiptment
     Date nextService;
     boolean recurring;
 
-    public equiptment(String label, String notes, Date serviceDate, String description, String category, Date nextService, boolean recurring)
+    public equiptment(String name, String label, String notes, Date serviceDate, String description, String category, Date nextService, boolean recurring)
     {
+        this.name = name;
         this.label = label;
         this.notes = notes;
         this.serviceDate = serviceDate;
@@ -43,25 +45,34 @@ public class equiptment
 
     public equiptment()
     {
-        categories.add("Air Filtration Systems");
-        categories.add("Analytical Instruments");
-        categories.add("Buoyancy Control Devices");
-        categories.add("Compressors");
-        categories.add("Cylinder Values");
-        categories.add("Cylinders");
-        categories.add("Depth Gauges");
+        // categories.add("Air Filtration Systems");
+        // categories.add("Analytical Instruments");
+        // categories.add("Buoyancy Control Devices");
+        // categories.add("Compressors");
+        // categories.add("Cylinder Values");
+        // categories.add("Cylinders");
+        // categories.add("Depth Gauges");
     }
 
 
     public String getId()
     {
-        return Id;
+        return this.Id;
     }
     public void setId(String id)
     {
         this.Id = id;
     }
 
+
+    public String getName()
+    {
+        return this.name;
+    }
+    public void setName(String name)
+    {
+        this.name = name;
+    }
     public List<String> getALlCategories()
     {
         return this.categories;
