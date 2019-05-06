@@ -150,7 +150,7 @@ public class diveLog
     }
     public void setId(String id)
     {
-        this.id = user.getId();
+        this.id = id;
     }
 
     List<diveSite> getSites()

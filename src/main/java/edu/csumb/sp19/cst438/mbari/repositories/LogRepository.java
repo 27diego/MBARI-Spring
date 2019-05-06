@@ -9,5 +9,5 @@ import edu.csumb.sp19.cst438.mbari.model.diveLog;
 @Repository
 public interface LogRepository extends MongoRepository<diveLog, String>
 {
-    diveLog findByid(String id);
+    diveLog findByUserId(String id);
 }
