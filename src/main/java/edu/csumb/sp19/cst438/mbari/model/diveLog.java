@@ -12,9 +12,7 @@ import java.util.List;
 public class diveLog
 {
 
-    @Id
-    private String Id;
-
+    private String id;
     
     List<diveSite> sites = new ArrayList<diveSite>();//sites
     List<String> purpose = new ArrayList<String>();
@@ -25,6 +23,7 @@ public class diveLog
     List<String> surface_condition = new ArrayList<String>();
     List<String> under_condition = new ArrayList<String>();
 
+    User user; // how to set the user
     diveSite site;
     String site_name;
     Date dive_date;
@@ -145,11 +144,11 @@ public class diveLog
 
     public String getId()
     {
-        return Id;
+        return this.id;
     }
     public void setId(String id)
     {
-        this.Id = id;
+        this.id = user.getId();
     }
 
     List<diveSite> getSites()
