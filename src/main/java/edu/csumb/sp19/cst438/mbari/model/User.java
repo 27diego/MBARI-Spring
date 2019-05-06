@@ -1,5 +1,7 @@
 package edu.csumb.sp19.cst438.mbari.model;
 
+import edu.csumb.sp19.cst438.mbari.model.diveLog;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class User {
   @Id
   private String id;
+
+  
   private String username;
   private String password;
   private String firstName;
@@ -33,12 +37,16 @@ public class User {
   private String eRelationship;
   private String eContactMobile;
   private String eSecondMobile;
+  
+  private diveLog divelog;
+  //diego, might be broken
 
   public User() {
 
   }
 
-  public User(String username, String password, String firstName, String lastName, String email, String birthday, String mobile, String secondMobile, String comments, Boolean isContractor, Boolean isIntern, Boolean isStaff, Boolean isVolunteer, Boolean isUser, Boolean isAdministrator, Boolean isPowerUser, Boolean isActive,Boolean isDiver, Boolean isTrainer, Boolean isTechnician,  String eFirstName, String eLastName, String eRelationship, String eContactMobile, String eSecondMobile) {
+  public User(diveLog divelog, String username, String password, String firstName, String lastName, String email, String birthday, String mobile, String secondMobile, String comments, Boolean isContractor, Boolean isIntern, Boolean isStaff, Boolean isVolunteer, Boolean isUser, Boolean isAdministrator, Boolean isPowerUser, Boolean isActive,Boolean isDiver, Boolean isTrainer, Boolean isTechnician,  String eFirstName, String eLastName, String eRelationship, String eContactMobile, String eSecondMobile) {
+    this.divelog = divelog;
     this.username = username;
     this.password = password;
     this.firstName = firstName;
