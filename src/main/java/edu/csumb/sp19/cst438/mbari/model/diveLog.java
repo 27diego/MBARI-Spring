@@ -28,11 +28,11 @@ public class diveLog
     diveSite site;
     String site_name;
     Date dive_date;
-    SimpleDateFormat start_time = new SimpleDateFormat("hh:mm");
-    SimpleDateFormat end_time = new SimpleDateFormat("hh:mm");
+    String start_time;
+    String end_time;
     String final_purpose;
     String training;//-1,0,1
-    SimpleDateFormat surface_interval = new SimpleDateFormat("hh:mm");
+    String surface_interval;
     int max_depth;
     String final_mode;
     String final_decompression;
@@ -43,7 +43,7 @@ public class diveLog
     String comments;
     String observations;
 
-    public diveLog(diveSite site, String site_name, Date dive_date, SimpleDateFormat start_time, SimpleDateFormat end_time, String final_purpose, String training, SimpleDateFormat surface_interval, int max_depth, String final_mode,String final_decompression, String final_breathing, String enviroment, String up_condition, String down_condition, String comments, String observations)
+    public diveLog(diveSite site, String site_name, Date dive_date, String start_time, String end_time, String final_purpose, String training, String surface_interval, int max_depth, String final_mode,String final_decompression, String final_breathing, String enviroment, String up_condition, String down_condition, String comments, String observations)
     {
         this.site = site;
         this.site_name = site_name;
@@ -216,7 +216,7 @@ public class diveLog
     {
 
     }
-    public SimpleDateFormat getTimeIn()
+    public String getTimeIn()
     {
         return start_time;
     }
@@ -224,7 +224,7 @@ public class diveLog
     {
 
     }
-    public SimpleDateFormat getTimeOut()
+    public String getTimeOut()
     {
         return end_time;
     } 
@@ -259,11 +259,11 @@ public class diveLog
         return training;
     }
     
-    public void setSurvaceInterval(SimpleDateFormat interval)
+    public void setSurvaceInterval(String interval)
     {
         this.surface_interval = interval;
     }
-    public SimpleDateFormat getSurfaceInterval()
+    public String getSurfaceInterval()
     {
         return this.surface_interval;
     }
