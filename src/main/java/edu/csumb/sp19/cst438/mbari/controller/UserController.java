@@ -25,6 +25,7 @@ public class UserController {
   UserRepository userRepository;
 
   @ApiOperation(value = "List all the users")
+  @CrossOrigin(origins = "http://localhost:4200")
   @GetMapping("/users/getAll")
   @ResponseBody
   List<User> getAll() {
@@ -32,6 +33,7 @@ public class UserController {
     return result;
   }
 
+  @CrossOrigin(origins = "http://localhost:4200")
   @PostMapping("/users/add")
   @ApiOperation(value = "Add new user")
   @ResponseBody
@@ -40,6 +42,7 @@ public class UserController {
     return user;
   }
 
+  @CrossOrigin(origins = "http://localhost:4200")
   @GetMapping("/users/get/{id}")
   @ApiOperation(value = "Get user by ID")
   @ResponseBody
@@ -48,6 +51,7 @@ public class UserController {
     return user;
   }
 
+  @CrossOrigin(origins = "http://localhost:4200")
   @GetMapping("/users/delete/{id}")
   @ApiOperation(value = "Delete user by ID")
   @ResponseBody

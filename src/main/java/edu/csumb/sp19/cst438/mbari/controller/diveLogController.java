@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ public class diveLogController
     @Autowired
     LogRepository logRepo;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/divelog/add")
     @ApiOperation(value = "Add new divelog")
     @ResponseBody
@@ -33,6 +35,7 @@ public class diveLogController
         return divelog;
     }
     
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/divelog/get/{id}")
     @ApiOperation(value = "Get divelog by ID")
     @ResponseBody
@@ -42,6 +45,7 @@ public class diveLogController
         return divelog;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/divelog/delete/{id}")
     @ApiOperation(value = "Delete divelog by ID")
     @ResponseBody

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import edu.csumb.sp19.cst438.mbari.model.User;
 import edu.csumb.sp19.cst438.mbari.repositories.UserRepository;
 
+
 @RestController
 public class AuthController {
 
@@ -23,6 +25,7 @@ public class AuthController {
   UserRepository userRepository;
 
   @ApiOperation(value = "Login endpoint")
+  @CrossOrigin(origins = "http://localhost:4200")
   @PostMapping("auth/login")
   @ResponseBody
   Boolean login(@RequestParam String username, @RequestParam String password) {
@@ -40,6 +43,7 @@ public class AuthController {
 
 
   @ApiOperation(value = "Logout endpoint")
+  @CrossOrigin(origins = "http://localhost:4200")
   @PostMapping("auth/logout")
   @ResponseBody
   Boolean logou() {
