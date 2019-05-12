@@ -26,6 +26,13 @@ public class diveLogController
 {
     @Autowired
     LogRepository logRepo;
+    
+    @GetMapping("/divelog/getAll")
+    @ResponseBody
+    List<diveLog> getAll() {
+      List<diveLog> result = logRepo.findAll();
+      return result;
+    }
 
     @PostMapping("/divelog/add")
     @ApiOperation(value = "Add new divelog")
@@ -53,5 +60,8 @@ public class diveLogController
         logRepo.deleteById(id);
         return true;
     }
+
+
+
     
 }
