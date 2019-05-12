@@ -19,14 +19,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class equiptmentController
 {
     @Autowired
     EquiptmentRepository equiptmentRepo;
 
-    @ApiOperation(value = "List all equiptment")
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/equiptment/getAll")
     @ResponseBody
     List<equiptment> getAll()
@@ -35,7 +34,6 @@ public class equiptmentController
         return result;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/equiptment/add")
     @ApiOperation(value = "Add new equiptment")
     @ResponseBody
@@ -44,7 +42,6 @@ public class equiptmentController
       return equipt;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/equiptment/get/{id}")
     @ApiOperation(value = "Get equiptment by ID")
     @ResponseBody
@@ -53,7 +50,6 @@ public class equiptmentController
       return equipt;
     }
   
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/equiptment/delete/{id}")
     @ApiOperation(value = "Delete equiptmebt by ID")
     @ResponseBody

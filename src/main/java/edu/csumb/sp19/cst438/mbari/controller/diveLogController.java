@@ -19,13 +19,14 @@ import edu.csumb.sp19.cst438.mbari.model.diveLog;
 import edu.csumb.sp19.cst438.mbari.repositories.LogRepository;
 import edu.csumb.sp19.cst438.mbari.repositories.UserRepository;
 
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class diveLogController
 {
     @Autowired
     LogRepository logRepo;
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/divelog/add")
     @ApiOperation(value = "Add new divelog")
     @ResponseBody
@@ -35,7 +36,6 @@ public class diveLogController
         return divelog;
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/divelog/get/{id}")
     @ApiOperation(value = "Get divelog by ID")
     @ResponseBody
@@ -45,7 +45,6 @@ public class diveLogController
         return divelog;
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/divelog/delete/{id}")
     @ApiOperation(value = "Delete divelog by ID")
     @ResponseBody
