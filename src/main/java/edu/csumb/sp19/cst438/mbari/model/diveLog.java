@@ -19,49 +19,70 @@ public class diveLog
     List<diveSite> sites = new ArrayList<diveSite>();//sites
     List<String> purpose = new ArrayList<String>();
     List<String> mode = new ArrayList<String>();
-    List<String> decompression = new ArrayList<String>();
+    List<String> decompression_list = new ArrayList<String>();
     List<String> breathing = new ArrayList<String>();
     List<String> spec_enviroment = new ArrayList<String>();
-    List<String> surface_condition = new ArrayList<String>();
+    List<String> surfaces_condition = new ArrayList<String>();
     List<String> under_condition = new ArrayList<String>();
 
     diveSite site;
-    String site_name;
-    Date dive_date;
-    String start_time;
-    String end_time;
-    String final_purpose;
-    String training;//-1,0,1
+    String diver;
+    Date date;
+    String dive_site;
+    String time_in;
+    String time_out;
+    String time_at_bottom;
+    String durration;
+    String task; //w
+    String type;
+    String reason; //training/proficiency/neither
     String surface_interval;
-    int max_depth;
-    String final_mode;
-    String final_decompression;
-    String final_breathing;
-    String enviroment;
-    String up_condition;
-    String down_condition;
+    Double gps_1;
+    Double gps_2;
+    String max_depth;
+    String diving_mode;
+    String decompression;
+    String breathing_gas;
+    Double starting_psi;
+    Double ending_psi;
+    String buddy_list; //change to list of strings
+    String surface_condition;
+    String underwater_condition;
+    String standby_diver;
+    String tender;
+    String dpic;
     String comments;
-    String observations;
+    String animal;
 
-    public diveLog(diveSite site, String site_name, Date dive_date, String start_time, String end_time, String final_purpose, String training, String surface_interval, int max_depth, String final_mode,String final_decompression, String final_breathing, String enviroment, String up_condition, String down_condition, String comments, String observations)
+    public diveLog(String diver, Date date, String dive_site, String time_in, String time_out, String time_at_bottom, String durration, String task, String type, String reason, String surface_interval, Double gps_1, Double gps_2, String max_depth, String diving_mode, String decompression, String breathing_gas, Double starting_psi, Double ending_psi, String buddy_list, String surface_condition, String underwater_condition, String standby_diver, String tender, String dpic, String comments, String animal)
     {
-        this.site = site;
-        this.site_name = site_name;
-        this.dive_date = dive_date;
-        this.start_time = start_time;
-        this.end_time = end_time;
-        this.final_purpose = final_purpose;
-        this.training = training;//-1,0,1
+        this.diver = diver;
+        this.date = date;
+        this.dive_site = dive_site;
+        this.time_in = time_in;
+        this.time_out = time_out;
+        this.time_at_bottom = time_at_bottom;
+        this.durration = durration;
+        this.task = task;
+        this.type = type;
+        this.reason = reason;
         this.surface_interval = surface_interval;
+        this.gps_1 = gps_1;
+        this.gps_2 = gps_2;
         this.max_depth = max_depth;
-        this.final_mode = final_mode;
-        this.final_decompression = final_decompression;
-        this.final_breathing = final_breathing;
-        this.enviroment = enviroment;
-        this.up_condition = up_condition;
-        this.down_condition = down_condition;
+        this.diving_mode = diving_mode;
+        this.decompression = decompression;
+        this.breathing_gas = breathing_gas;
+        this.starting_psi = starting_psi;
+        this.ending_psi = ending_psi;
+        this.buddy_list = buddy_list;
+        this.surface_condition = surface_condition;
+        this.underwater_condition = underwater_condition;
+        this.standby_diver = standby_diver;
+        this.tender = tender;
+        this.dpic = dpic;
         this.comments = comments;
-        this.observations = observations;
+        this.animal = animal;
 
         purpose.add("Commercial Task");
         purpose.add("Commercial, Scientific Taks");
@@ -73,9 +94,9 @@ public class diveLog
         mode.add("Hookah");
         mode.add("Snorkling");
         
-        decompression.add("Dive Computer");
-        decompression.add("Dive Tables");
-        decompression.add("Software");
+        decompression_list.add("Dive Computer");
+        decompression_list.add("Dive Tables");
+        decompression_list.add("Software");
 
         breathing.add("Air");
         breathing.add("Nitrox 28");
@@ -88,9 +109,9 @@ public class diveLog
         spec_enviroment.add("Aquarium Diving");
         spec_enviroment.add("asd");
 
-        surface_condition.add("Calm");
-        surface_condition.add("Moderate");
-        surface_condition.add("Rough");
+        surfaces_condition.add("Calm");
+        surfaces_condition.add("Moderate");
+        surfaces_condition.add("Rough");
 
         under_condition.add("Good");
         under_condition.add("Moderate");
@@ -114,9 +135,9 @@ public class diveLog
         mode.add("Hookah");
         mode.add("Snorkling");
         
-        decompression.add("Dive Computer");
-        decompression.add("Dive Tables");
-        decompression.add("Software");
+        decompression_list.add("Dive Computer");
+        decompression_list.add("Dive Tables");
+        decompression_list.add("Software");
 
         breathing.add("Air");
         breathing.add("Nitrox 28");
@@ -129,9 +150,9 @@ public class diveLog
         spec_enviroment.add("Aquarium Diving");
         spec_enviroment.add("asd");
 
-        surface_condition.add("Calm");
-        surface_condition.add("Moderate");
-        surface_condition.add("Rough");
+        surfaces_condition.add("Calm");
+        surfaces_condition.add("Moderate");
+        surfaces_condition.add("Rough");
 
         under_condition.add("Good");
         under_condition.add("Moderate");
@@ -175,7 +196,7 @@ public class diveLog
     }
     List<String> getAllDecompression()
     {
-        return decompression;
+        return decompression_list;
     }
     List<String> getAllBreathing()
     {
@@ -187,7 +208,7 @@ public class diveLog
     }
     List<String> getAllSurfaceCon()
     {
-        return surface_condition;
+        return surfaces_condition;
     }
     List<String> getAllUnderCon()
     {
@@ -195,192 +216,238 @@ public class diveLog
     }
    
 
-    public void setDiveSite(String name)
+    public void set_diver(String diver)
     {
-        for(int x=0;x<sites.size();x++)
-        {
-            if(name.equals(sites.get(x).getName()))
-            {
-                site = sites.get(x);
-                break;
-            }
-        }
-        site_name = site.getName();
+        this.diver = diver;
+    }
+    public String getDiver()
+    {
+        return this.diver;
     }
 
-    public String getSiteName()
+    public void set_diver(Date date)
     {
-        return site_name;
+        this.date = date;
     }
-    public void setTimeIn()//finish
+    public Date getDate()
     {
+        return this.date;
+    }
+    public void set_divesite(String dive_site)
+    {
+        this.dive_site = dive_site;
+    }
+    public String getDive_site()
+    {
+        return this.dive_site;
+    }
 
-    }
-    public String getTimeIn()
+    public void set_timeIn(String timeIn)
     {
-        return start_time;
+        this.time_in = timeIn;
     }
-    public void setTimeOut()
+    public String get_timeIn()
     {
+        return this.time_in;
+    }
 
+    public void setTime_out(String time_out)
+    {
+        this.time_out = time_out;
     }
-    public String getTimeOut()
+    public String getTime_out()
     {
-        return end_time;
-    } 
-    public void setPurpose(String purp)
-    {
-        for(String s : purpose)
-        {
-            if(purp.equals(s))
-            {
-                final_purpose = s;
-                break;
-            }
-        }
-    }
-    public String getPurpose()
-    {
-        return final_purpose;
-    }
-    public void setTraining(int x)
-    {
-        switch(x){
-            case -1:training = "No";
-            break;
-            case 0 : training = "Training";
-            break;
-            case 1: training = "Proficiency";
-            break;
-        }
-    }
-    public String getTraining()
-    {
-        return training;
+        return this.time_out;
     }
     
-    public void setSurvaceInterval(String interval)
+
+    public void setTimeAtBottom(String time_at_bottom)
     {
-        this.surface_interval = interval;
+        this.time_at_bottom = time_at_bottom;
     }
-    public String getSurfaceInterval()
+    public String getTimeAtBottom()
+    {
+        return this.time_at_bottom;
+    }
+
+    public void getDurration(String durration)
+    {
+        this.durration = durration;
+    }
+    public String getDurration()
+    {
+        return this.durration;
+    }
+
+    public void set_task(String task)
+    {
+        this.task = task;
+    }
+    public String getTask()
+    {
+        return this.task;
+    }
+
+    public void set_type(String type)
+    {
+        this.type = type;
+    }
+    public String getType()
+    {
+        return this.type;
+    }
+
+    public void set_reason(String reason)
+    {
+        this.reason = reason;
+    }
+    public String getReason()
+    {
+        return this.reason;
+    }
+
+    public void set_surfaceInterval(String surface_interval)
+    {
+        this.surface_interval = surface_interval;
+    }
+    public String getSurface_interval()
     {
         return this.surface_interval;
     }
 
-    public void setMaxDepth()
+    public void setgps_1(Double gps_1)
     {
-        this.max_depth = site.getDepth();
+        this.gps_1 = gps_1;
     }
-    public int getMaxDepth()
+    public Double getGPS_1()
+    {
+        return this.gps_1;
+    }
+
+    public void setGPS_2(Double gps_2)
+    {
+        this.gps_2 = gps_2;
+    }
+    public Double getGPS_2()
+    {
+        return this.gps_2;
+    }
+
+    public void setmax_depth(String max_depth)
+    {
+        this.max_depth = max_depth;
+    }
+    public String getMax_depth()
     {
         return this.max_depth;
     }
-    public void setFinalMode(String mod)
+
+    public void set_decompression(String decompression)
     {
-        for(String str : mode)
-        {
-            if(mod.equals(str))
-            {
-                this.final_mode = mod;
-                break;
-            }
-        }
+        this.decompression = decompression;
     }
-    public String getFinalMode()
+    public String get_decompression()
     {
-        return this.final_mode;
+        return this.decompression;
     }
-    public void setFinalCompression(String comp)
+
+    public void set_breatingGas(String gas)
     {
-        for(String s : decompression)
-        {
-            if(s.equals(comp))
-            {
-                this.final_decompression = s;
-                break;
-            }
-        }
+        this.breathing_gas = gas;
     }
-    public String getFinalDecomp()
+    public String getBreathing_gas()
     {
-        return this.final_decompression;
+        return this.breathing_gas;
     }
-    public void setFinalBreathing(String breath)
+
+    public void setStarting_psi(Double starting)
     {
-        for(String str : breathing)
-        {
-            if(breath.equals(str))
-            {
-                this.final_breathing = str;
-                break;
-            }
-        }
+        this.starting_psi = starting;
     }
-    public String getFinalBreathing()
+    public Double getStarting_psi()
     {
-        return this.final_breathing;
+        return this.starting_psi;
     }
-    public void setFinalEnviroment(String env)
+
+    public void set_endingPSI(Double psi)
     {
-        for(String str : spec_enviroment)
-        {
-            if(env.equals(str))
-            {
-                this.enviroment = env;
-                break;
-            }
-        }
+        this.ending_psi = ending_psi;
     }
-    public String getEnviroment()
+    public Double getEnding_psi()
     {
-        return this.enviroment;
+        return this.ending_psi;
     }
-    public void setSurfaceCondition(String condition)
+
+    public void setBuddy_list(String buddies)
     {
-        for(String str : surface_condition)
-        {
-            if(str.equals(condition))
-            {
-                this.up_condition = condition;
-                break;
-            }
-        }
+        this.buddy_list = buddies;
     }
-    public String getSurfaceCond()
+    public String getBuddies()
     {
-        return this.up_condition;
+        return this.buddy_list;
     }
-    public void setUnderCondition(String condition)
+
+    public void setSurface_condition(String surface_condition)
     {
-        for(String str : under_condition)
-        {
-            if(condition.equals(str))
-            {
-                this.down_condition = condition;
-                break;
-            }
-        }
+        this.surface_condition = surface_condition;
     }
-    public String getUnderCondt()
+    public String getSurface_Condition()
     {
-        return this.down_condition;
+        return this.surface_condition;
     }
-    public void setComments(String comments)
+
+    public void set_underwaterCondition(String underwater)
+    {
+        this.underwater_condition = underwater;
+    }
+    public String get_underWaterCondition()
+    {
+        return this.underwater_condition;
+    }
+
+    public void set_standbyDiver(String standby_diver)
+    {
+        this.standby_diver = standby_diver;
+    }
+    public String getStandby_diver()
+    {
+        return this.standby_diver;
+    }
+
+    public void set_tender(String tender)
+    {
+        this.tender = tender;
+    }
+    public String getTender()
+    {
+        return this.tender;
+    }
+
+    public void set_dpic(String dpic)
+    {
+        this.dpic = dpic;
+    }
+    public String get_dpic()
+    {
+        return this.dpic;
+    }
+
+    public void comments(String comments)
     {
         this.comments = comments;
     }
-    public String getComments()
+    public String get_comments()
     {
         return this.comments;
     }
-    public void setObservations(String observations)
+
+    public void set_animal(String animal)
     {
-        this.observations = observations;
+        this.animal = animal;
     }
-    public String getObservations()
+    public String get_animal()
     {
-        return this.observations;
+        return this.animal;
     }
 
 
