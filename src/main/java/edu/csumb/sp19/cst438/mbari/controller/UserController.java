@@ -40,6 +40,14 @@ public class UserController {
     return user;
   }
 
+  @PostMapping("/users/update")
+  @ApiOperation(value = "Update user")
+  @ResponseBody
+  User updateUser(@RequestBody User user) {
+    userRepository.save(user);
+    return user;
+  }
+
   @GetMapping("/users/get/{id}")
   @ApiOperation(value = "Get user by ID")
   @ResponseBody

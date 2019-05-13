@@ -42,6 +42,15 @@ public class equiptmentController
       return equipt;
     }
 
+    @PostMapping("/equiptment/update")
+    @ApiOperation(value = "Update equiptment")
+    @ResponseBody
+    equiptment updateEquiptment(@RequestBody equiptment equip) {
+      equiptmentRepo.save(equip);
+      return equip;
+    }
+  
+
     @GetMapping("/equiptment/get/{id}")
     @ApiOperation(value = "Get equiptment by ID")
     @ResponseBody

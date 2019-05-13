@@ -42,6 +42,15 @@ public class diveLogController
         logRepo.save(divelog);
         return divelog;
     }
+
+    @PostMapping("/divelog/update")
+    @ApiOperation(value = "Update divelog")
+    @ResponseBody
+    diveLog updateDiveLog(@RequestBody diveLog divelog) {
+        logRepo.save(divelog);
+        return divelog;
+    }
+
     
     @GetMapping("/divelog/get/{id}")
     @ApiOperation(value = "Get divelog by ID")
