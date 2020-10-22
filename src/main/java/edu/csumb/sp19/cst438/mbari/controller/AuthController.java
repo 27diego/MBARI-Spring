@@ -45,7 +45,7 @@ public class AuthController {
   @ApiOperation(value = "Logout endpoint")
   @PostMapping("auth/logout")
   @ResponseBody
-  Boolean logou() {
+  Boolean logout() {
     Boolean login = false;
     return login;
   }
